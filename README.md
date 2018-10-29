@@ -1,4 +1,5 @@
 ------
+# نصب کوبرنتیز بدون مشکل تحریم در ایران
 # Install Kubernetes in Iran without sanctions
 This script helps you to install kubernetes (kubectl and minikube) without pain in Iran from official repository of Kubernetes (Google).
 
