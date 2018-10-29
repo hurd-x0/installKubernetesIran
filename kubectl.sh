@@ -6,7 +6,7 @@ PROXY_SERVER_ADDR="lab.gordi.ir"
 PROXY_SERVER_PORT="60666"
 function set_proxy {
 export http_proxy="http://$PROXY_SERVER_ADDR:$PROXY_SERVER_PORT"
-export https_proxy="https://$PROXY_SERVER_ADDR:$PROXY_SERVER_PORT"
+export https_proxy="http://$PROXY_SERVER_ADDR:$PROXY_SERVER_PORT"
 echo "Detect IP Address"
 HTTP_IP=`curl -s http://ifconfig.me`
 echo "IP Address is: $HTTP_IP"
@@ -23,9 +23,7 @@ then
 fi
 }
 function kube_install {
-curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
-chmod +x ./kubectl
-sudo mv ./kubectl /usr/local/bin/kubectl
+curl -LOk https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl && chmod +x ./kubectl && sudo mv ./kubectl /usr/local/bin/kubectl
 }
 function unset_proxy {
 export http_proxy=""

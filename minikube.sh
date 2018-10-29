@@ -9,7 +9,7 @@ echo "Detect IP Address"
 HTTP_IP=`curl -s http://ifconfig.me"`
 echo "IP Address is: $HTTP_IP"
 export http_proxy="http://$PROXY_SERVER_ADDR:$PROXY_SERVER_PORT"
-export https_proxy="https://$PROXY_SERVER_ADDR:$PROXY_SERVER_PORT"
+export https_proxy="http://$PROXY_SERVER_ADDR:$PROXY_SERVER_PORT"
 echo "Detect Proxy IP"
 PROXY_IP=`host lab.gordi.ir | grep -o "address.*" | awk {'print $2'}`
 echo "Proxy IP is: $PROXY_IP"
