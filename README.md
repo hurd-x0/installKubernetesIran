@@ -5,8 +5,11 @@ This script helps you to install kubernetes (kubectl and minikube) without pain 
 How to use it?
 
 `$ git clone https://github.com/danitfk/installKubernetesIran`
+
 `$ cd installKubernetesIran`
+
 `$ ./kubectl.sh`
+
 `$ ./minikube.sh`
 
 To define virtualization in minikube you can use this:
