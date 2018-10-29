@@ -9,13 +9,16 @@ How to use it?
 `$ ./kubectl.sh`
 `$ ./minikube.sh`
 
-To define virtualization in minikube you can use this;
+To define virtualization in minikube you can use this:
 
 (Virtualbox)
+
 `$ ./setup-minikube.sh virtualbox`
 
 OR
+
 (KVM Virtualization)
+
 `$ ./setup-minikube.sh kvm`
 
 then start minikube to create first minikube service:
