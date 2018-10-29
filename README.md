@@ -30,7 +30,7 @@ OR
 
 then start minikube to create first minikube service:
 
-`$ ./setup-minikube.sh`
+`$ ./setup-minikube.sh start`
 
 Pull requests are welcomed. :)
  
