@@ -5,12 +5,10 @@
 PROXY_SERVER_ADDR="lab.gordi.ir"
 PROXY_SERVER_PORT="60666"
 function set_proxy {
-echo "Detect IP Address"
-HTTP_IP=`curl -s http://ifconfig.me`
-echo "IP Address is: $HTTP_IP"
 export http_proxy="http://$PROXY_SERVER_ADDR:$PROXY_SERVER_PORT"
 export https_proxy="http://$PROXY_SERVER_ADDR:$PROXY_SERVER_PORT"
-echo "Detect Proxy IP"
+echo "Detect IP Address"
+HTTP_IP=`curl -s http://ifconfig.me`
 PROXY_IP=`host lab.gordi.ir | grep -o "address.*" | awk {'print $2'}`
 echo "Proxy IP is: $PROXY_IP"
 if [[ "$PROXY_IP" != "$HTTP_IP" ]]
@@ -31,4 +29,4 @@ export https_proxy=""
 }
 
 # RUN SCRIPT
-set_proxy && kube_install && unset_proxy
+unset_proxy && set_proxy && kube_install && unset_proxy
